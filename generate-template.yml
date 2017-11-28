@@ -1,0 +1,6 @@
+---
+- name: Generate CloudFormation template files.
+  hosts: localhost
+  connection: local
+  roles:
+    - generate-template

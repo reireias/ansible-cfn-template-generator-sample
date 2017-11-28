@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "{{ item.name }} template"
+Resources:
+  S3Bucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: "{{ item.name }}-bucket"
+{% if item.hoge_tag %}
+      Tags:
+        - Key: "hoge-key"
+          Value: "hoge-value"
+{% endif %}
+{# jinja2はこのようにコメントを書くこともできる #}
+{% for sqs in item.sqs %}
+  SQS{{ loop.index }}:
+    Type: "AWS::SQS::Queue"
+    Properties:
+      QueueName: "{{ sqs }}"
+{% endfor %}

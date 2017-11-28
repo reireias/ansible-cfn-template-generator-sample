@@ -1,0 +1,9 @@
+---
+- name: Create cfn template files.
+  template:
+    src: cfn-template.yml.j2
+    dest: 'cfn_template/{{ item.name }}-template.yml'
+    mode: 0644
+    validate: 'aws cloudformation validate-template --template-body file://%s'
+  with_items: '{{ environments }}'
+

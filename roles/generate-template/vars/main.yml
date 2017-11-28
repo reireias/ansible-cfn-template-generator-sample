@@ -1,0 +1,21 @@
+---
+environments:
+  # 開発環境
+  - name: 'develop'
+    hoge_tag: false
+    sqs:
+      - 'dev-queue'
+
+  # テスト環境
+  - name: 'test'
+    hoge_tag: false
+    sqs:
+      - 'test-queue'
+
+  # 本番環境
+  - name: product
+    hoge_tag: true
+    sqs:
+      - 'product-queue1'
+      - 'product-queue2'
+
