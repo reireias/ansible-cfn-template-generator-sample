@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "develop template"
+Resources:
+  S3Bucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: "develop-bucket"
+  SQS1:
+    Type: "AWS::SQS::Queue"
+    Properties:
+      QueueName: "dev-queue"

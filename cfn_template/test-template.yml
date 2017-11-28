@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "test template"
+Resources:
+  S3Bucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: "test-bucket"
+  SQS1:
+    Type: "AWS::SQS::Queue"
+    Properties:
+      QueueName: "test-queue"

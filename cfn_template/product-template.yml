@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "product template"
+Resources:
+  S3Bucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: "product-bucket"
+      Tags:
+        - Key: "hoge-key"
+          Value: "hoge-value"
+  SQS1:
+    Type: "AWS::SQS::Queue"
+    Properties:
+      QueueName: "product-queue1"
+  SQS2:
+    Type: "AWS::SQS::Queue"
+    Properties:
+      QueueName: "product-queue2"
